@@ -31,6 +31,7 @@
                     <li><a href="#inicio">Início</a></li>
                     <li><a href="#especialidades">Especialidades</a></li>
                     <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#galeria">Fotografias</a></li>
                     <li><a href="https://www.instagram.com/ft.grafiia?igsh=ZXJramhtZzdjMTBt" target="_blank">Portfólio</a></li> 
                 </ul>
             </nav>
@@ -119,8 +120,129 @@
                 </div><!--flex-->
             </div><!--interface-->
         </section><!--sobre-->
-        
 
+        <!-- SEÇÃO GALERIA IMERSIVA -->
+        <section class="galeria-imersiva" id="galeria">
+            <div class="interface">
+                <h2 class="titulo">MINHAS <span>FOTOGRAFIAS.</span></h2>
+                <p class="galeria-subtitulo">Cada imagem conta uma história. Clique para explorar.</p>
+                
+                <!-- Filtros interativos -->
+                <div class="galeria-filtros">
+                    <button class="filtro-btn ativo" data-filtro="todos">Todos</button>
+                    <button class="filtro-btn" data-filtro="paisagem">Paisagens</button>
+                    <button class="filtro-btn" data-filtro="agua">Lagos & Águas</button>
+                    <button class="filtro-btn" data-filtro="golden">Golden Hour</button>
+                </div>
+
+                <!-- Grid Masonry -->
+                <div class="masonry-grid">
+                    <div class="masonry-item reveal" data-categoria="golden paisagem" onclick="openLightbox(0)">
+                        <img src="images/gallery_01_cidade_montanha.jpg" alt="Cidade com montanha ao fundo" loading="lazy">
+                        <div class="masonry-overlay">
+                            <span class="masonry-tag">Golden Hour</span>
+                            <h3>Silhueta Urbana</h3>
+                            <p>A cidade adormece sob o manto dourado do crepúsculo</p>
+                        </div>
+                    </div>
+
+                    <div class="masonry-item masonry-tall reveal" data-categoria="agua" onclick="openLightbox(1)">
+                        <img src="images/gallery_02_pier_sunset.jpg" alt="Pier ao pôr do sol" loading="lazy">
+                        <div class="masonry-overlay">
+                            <span class="masonry-tag">Momento</span>
+                            <h3>Além do Horizonte</h3>
+                            <p>Quatro almas contemplando o infinito</p>
+                        </div>
+                    </div>
+
+                    <div class="masonry-item reveal" data-categoria="agua paisagem" onclick="openLightbox(2)">
+                        <img src="images/gallery_03_lago_nuvens.jpg" alt="Lago com nuvens dramáticas" loading="lazy">
+                        <div class="masonry-overlay">
+                            <span class="masonry-tag">Paisagem</span>
+                            <h3>Espelho do Céu</h3>
+                            <p>Quando as nuvens se encontram com a água</p>
+                        </div>
+                    </div>
+
+                    <div class="masonry-item reveal" data-categoria="paisagem" onclick="openLightbox(3)">
+                        <img src="images/gallery_04_campo_sertao.jpg" alt="Campo no sertão" loading="lazy">
+                        <div class="masonry-overlay">
+                            <span class="masonry-tag">Sertão</span>
+                            <h3>Terra Viva</h3>
+                            <p>A beleza crua e pura do sertão nordestino</p>
+                        </div>
+                    </div>
+
+                    <div class="masonry-item masonry-tall reveal" data-categoria="agua" onclick="openLightbox(4)">
+                        <img src="images/gallery_05_barragem_pessoas.jpg" alt="Barragem com pessoas" loading="lazy">
+                        <div class="masonry-overlay">
+                            <span class="masonry-tag">Vida</span>
+                            <h3>Encontro das Águas</h3>
+                            <p>Onde a vida pulsa entre concreto e natureza</p>
+                        </div>
+                    </div>
+
+                    <div class="masonry-item reveal" data-categoria="golden agua" onclick="openLightbox(5)">
+                        <img src="images/gallery_06_torre_dourado.jpg" alt="Torre ao pôr do sol dourado" loading="lazy">
+                        <div class="masonry-overlay">
+                            <span class="masonry-tag">Golden Hour</span>
+                            <h3>Guardião Dourado</h3>
+                            <p>A torre vigila o anoitecer sobre as águas calmas</p>
+                        </div>
+                    </div>
+
+                    <div class="masonry-item reveal" data-categoria="agua paisagem" onclick="openLightbox(6)">
+                        <img src="images/gallery_07_lago_quiosque.jpg" alt="Lago com quiosque" loading="lazy">
+                        <div class="masonry-overlay">
+                            <span class="masonry-tag">Paisagem</span>
+                            <h3>Refúgio Sereno</h3>
+                            <p>Um quiosque solitário à beira do lago</p>
+                        </div>
+                    </div>
+
+                    <div class="masonry-item reveal" data-categoria="agua paisagem" onclick="openLightbox(7)">
+                        <img src="images/gallery_08_lago_montanhas.jpg" alt="Lago com montanhas" loading="lazy">
+                        <div class="masonry-overlay">
+                            <span class="masonry-tag">Paisagem</span>
+                            <h3>Imensidão Azul</h3>
+                            <p>Montanhas que se curvam diante das águas</p>
+                        </div>
+                    </div>
+
+                    <div class="masonry-item masonry-wide reveal" data-categoria="golden" onclick="openLightbox(8)">
+                        <img src="images/gallery_09_por_do_sol.jpg" alt="Pôr do sol espetacular" loading="lazy">
+                        <div class="masonry-overlay">
+                            <span class="masonry-tag">Golden Hour</span>
+                            <h3>Fogo no Horizonte</h3>
+                            <p>O sol se despede pintando o céu em chamas</p>
+                        </div>
+                    </div>
+                </div><!--masonry-grid-->
+
+                <div class="galeria-cta">
+                    <a href="portfolio.html">
+                        <button>Ver Portfólio Completo</button>
+                    </a>
+                </div>
+            </div><!--interface-->
+        </section><!--galeria-imersiva-->
+
+        <!-- LIGHTBOX FULLSCREEN -->
+        <div class="lightbox" id="lightbox">
+            <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+            <button class="lightbox-prev" onclick="prevImage()"><i class="bi bi-chevron-left"></i></button>
+            <button class="lightbox-next" onclick="nextImage()"><i class="bi bi-chevron-right"></i></button>
+            <div class="lightbox-content">
+                <img id="lightbox-img" src="" alt="Fotografia em tela cheia">
+                <div class="lightbox-caption">
+                    <h3 id="lightbox-title"></h3>
+                    <p id="lightbox-desc"></p>
+                </div>
+            </div>
+            <div class="lightbox-counter">
+                <span id="lightbox-current">1</span> / <span id="lightbox-total">9</span>
+            </div>
+        </div><!--lightbox-->
   
     </main>
 
@@ -203,6 +325,7 @@
     <!-- FIM DO RELÓGIO -->
 
     <script src="clock.js"></script>
+    <script src="gallery.js"></script>
 
 </body>
 </html>
