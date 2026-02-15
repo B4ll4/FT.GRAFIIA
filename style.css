@@ -3,9 +3,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Sevillana", serif;
-    font-weight: 400;
-    font-style: normal;
 }
 
 html {
@@ -16,6 +13,7 @@ body {
     background-color: black;
     color: white;
     overflow-x: hidden;
+    font-family: 'Poppins', sans-serif;
 }
 
 .interface {
@@ -29,30 +27,36 @@ body {
 }
 
 /* BOTÕES */
-.btn-contato button {
-    padding: 10px 40px;
-    font-size: 18px;
-    font-weight: 500;
+.btn-contato button,
+.cta-portfolio button {
+    padding: 12px 40px;
+    font-size: 16px;
+    font-weight: 600;
     background-color: darkgoldenrod;
     border: 0;
     border-radius: 30px;
     cursor: pointer;
-    transition: .4s;
+    transition: .3s ease;
     color: black;
+    font-family: 'Poppins', sans-serif;
 }
 
 button:hover {
-    box-shadow: 0px 0px 15px darkgoldenrod;
+    box-shadow: 0px 0px 20px darkgoldenrod;
     transform: scale(1.05);
 }
 
 /* TÍTULOS */
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+}
+
 h2.titulo {
     color: darkgoldenrod;
-    font-size: 38px;
+    font-size: 42px;
     text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
     margin-bottom: 40px;
+    font-weight: 700;
 }
 
 h2.titulo span {
@@ -66,9 +70,10 @@ header {
     width: 100%;
     top: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(0, 0, 0, 0.95);
     z-index: 1000;
     border-bottom: 1px solid rgba(184, 134, 11, 0.2);
+    backdrop-filter: blur(10px);
 }
 
 header > .interface {
@@ -79,6 +84,11 @@ header > .interface {
 
 header .logo img {
     width: 150px;
+    transition: .3s;
+}
+
+header .logo img:hover {
+    transform: scale(1.05);
 }
 
 header nav ul {
@@ -93,8 +103,10 @@ header nav ul li {
 header nav ul li a {
     color: white;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 16px;
     transition: .3s;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
 }
 
 header nav ul li a:hover {
@@ -114,9 +126,10 @@ section.topo-do-site .flex {
 
 .topo-do-site .txt-topo-site h1 {
     color: white;
-    font-size: 60px;
-    line-height: 70px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-size: 64px;
+    line-height: 75px;
+    font-weight: 700;
+    margin-bottom: 20px;
 }
 
 .topo-do-site .txt-topo-site h1 span {
@@ -124,11 +137,12 @@ section.topo-do-site .flex {
 }
 
 .topo-do-site .txt-topo-site p {
-    color: #ccc;
-    font-size: 20px;
+    color: #bbb;
+    font-size: 18px;
     margin: 20px 0 40px 0;
     max-width: 500px;
-    font-family: Arial, sans-serif;
+    font-weight: 300;
+    line-height: 1.6;
 }
 
 .topo-do-site .img-topo-site img {
@@ -179,13 +193,32 @@ section.especialidades {
 .especialidades .especialidades-box h3 {
     font-size: 24px;
     margin-bottom: 15px;
-    font-family: Arial, sans-serif;
+    font-weight: 600;
 }
 
 .especialidades .especialidades-box p {
-    font-family: Arial, sans-serif;
     color: #bbb;
     line-height: 1.6;
+    margin-bottom: 20px;
+    font-size: 15px;
+}
+
+.btn-especialidade {
+    display: inline-block;
+    padding: 10px 25px;
+    background-color: darkgoldenrod;
+    color: black;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: .3s;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.btn-especialidade:hover {
+    box-shadow: 0px 0px 15px darkgoldenrod;
+    transform: scale(1.05);
 }
 
 /* SOBRE */
@@ -209,8 +242,8 @@ section.sobre .flex {
 .sobre .txt-sobre h2 {
     font-size: 45px;
     color: white;
-    font-family: Arial, sans-serif;
     margin-bottom: 30px;
+    font-weight: 700;
 }
 
 .sobre .txt-sobre h2 span {
@@ -218,11 +251,11 @@ section.sobre .flex {
 }
 
 .sobre .txt-sobre p {
-    font-family: Arial, sans-serif;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.8;
     color: #ccc;
     margin-bottom: 40px;
+    font-weight: 300;
 }
 
 .sobre .btn-social button {
@@ -237,53 +270,123 @@ section.sobre .flex {
     font-size: 20px;
 }
 
-/* PORTFOLIO */
-section.portfolio {
+/* PORTFÓLIO - PÁGINA DEDICADA */
+section.portfolio-hero {
+    padding: 160px 0 80px 0;
+    text-align: center;
+}
+
+section.portfolio-hero h1 {
+    font-size: 72px;
+    color: white;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+section.portfolio-hero p {
+    font-size: 20px;
+    color: #bbb;
+    font-weight: 300;
+}
+
+section.portfolio-galeria {
     padding: 80px 0;
 }
 
-section.portfolio .flex {
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 30px;
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
 }
 
-.img-port {
-    width: calc(33.333% - 20px);
-    height: 400px;
-    background-size: cover;
-    background-position: center;
-    transition: .5s;
-    cursor: pointer;
-    border-radius: 20px;
+.galeria-item {
     position: relative;
     overflow: hidden;
+    border-radius: 15px;
+    aspect-ratio: 1;
+    cursor: pointer;
+    background-color: #111;
 }
 
-.img-port:hover {
-    transform: scale(1.02);
+.galeria-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
 }
 
-.overlay {
+.galeria-item:hover img {
+    transform: scale(1.05);
+}
+
+.galeria-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(184, 134, 11, 0.7);
+    background-color: rgba(184, 134, 11, 0.8);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 24px;
-    font-weight: bold;
-    color: black;
     opacity: 0;
-    transition: .5s;
-    font-family: Arial, sans-serif;
+    transition: opacity 0.3s ease;
 }
 
-.img-port:hover .overlay {
+.galeria-item:hover .galeria-overlay {
     opacity: 1;
+}
+
+.galeria-overlay p {
+    font-size: 18px;
+    font-weight: 600;
+    color: black;
+    font-family: 'Playfair Display', serif;
+}
+
+.galeria-placeholder {
+    background-color: #1a1a1a;
+    border: 2px dashed #333;
+}
+
+.placeholder-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: #555;
+}
+
+.placeholder-content i {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.placeholder-content p {
+    font-size: 14px;
+    text-align: center;
+}
+
+/* CTA - PORTFÓLIO */
+section.cta-portfolio {
+    padding: 80px 0;
+    text-align: center;
+    background-color: #0a0a0a;
+}
+
+section.cta-portfolio h2 {
+    font-size: 48px;
+    color: white;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+section.cta-portfolio p {
+    font-size: 18px;
+    color: #bbb;
+    margin-bottom: 40px;
+    font-weight: 300;
 }
 
 /* RODAPÉ */
@@ -298,8 +401,8 @@ footer .flex {
 }
 
 footer .txt-footer p {
-    font-family: Arial, sans-serif;
     color: #666;
+    font-size: 14px;
 }
 
 footer .social-footer a {
@@ -327,9 +430,9 @@ footer .social-footer a:hover {
     .especialidades .flex {
         flex-direction: column;
     }
-    
-    .img-port {
-        width: calc(50% - 15px);
+
+    .galeria-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -337,14 +440,27 @@ footer .social-footer a:hover {
     header nav {
         display: none;
     }
-    
-    .img-port {
-        width: 100%;
+
+    .topo-do-site .txt-topo-site h1 {
+        font-size: 48px;
+        line-height: 55px;
+    }
+
+    section.portfolio-hero h1 {
+        font-size: 48px;
+    }
+
+    .galeria-grid {
+        grid-template-columns: 1fr;
     }
     
     footer .flex {
         flex-direction: column;
         gap: 30px;
         text-align: center;
+    }
+
+    h2.titulo {
+        font-size: 32px;
     }
 }
