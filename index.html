@@ -140,5 +140,69 @@
         </div>
     </footer>
 
+    <!-- RELÓGIO ANALÓGICO FLUTUANTE -->
+    <div class="floating-clock">
+        <div class="clock-container">
+            <svg class="clock-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <!-- Fundo do mostrador -->
+                <circle cx="100" cy="100" r="95" fill="#000000" stroke="url(#goldGradient)" stroke-width="3"/>
+                
+                <!-- Gradiente de ouro -->
+                <defs>
+                    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
+                        <stop offset="50%" style="stop-color:#FFA500;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#DAA520;stop-opacity:1" />
+                    </linearGradient>
+                    <radialGradient id="goldRadial" cx="30%" cy="30%">
+                        <stop offset="0%" style="stop-color:#FFED4E;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#DAA520;stop-opacity:1" />
+                    </radialGradient>
+                </defs>
+                
+                <!-- Marcadores (algarismos romanos) -->
+                <text x="100" y="25" text-anchor="middle" font-size="14" font-weight="bold" fill="url(#goldRadial)" font-family="Montserrat">XII</text>
+                <text x="175" y="105" text-anchor="middle" font-size="14" font-weight="bold" fill="url(#goldRadial)" font-family="Montserrat">III</text>
+                <text x="100" y="185" text-anchor="middle" font-size="14" font-weight="bold" fill="url(#goldRadial)" font-family="Montserrat">VI</text>
+                <text x="25" y="105" text-anchor="middle" font-size="14" font-weight="bold" fill="url(#goldRadial)" font-family="Montserrat">IX</text>
+                
+                <!-- Traços dos minutos -->
+                <g stroke="url(#goldGradient)" stroke-width="1.5" stroke-linecap="round">
+                    <line x1="100" y1="10" x2="100" y2="20" />
+                    <line x1="141.42" y1="14.64" x2="148.28" y2="21.5" />
+                    <line x1="170" y1="30" x2="164.14" y2="35.86" />
+                    <line x1="185.36" y1="58.58" x2="178.5" y2="65.44" />
+                    <line x1="190" y1="100" x2="180" y2="100" />
+                    <line x1="185.36" y1="141.42" x2="178.5" y2="134.56" />
+                    <line x1="170" y1="170" x2="164.14" y2="164.14" />
+                    <line x1="141.42" y1="185.36" x2="148.28" y2="178.5" />
+                    <line x1="100" y1="190" x2="100" y2="180" />
+                    <line x1="58.58" y1="185.36" x2="51.72" y2="178.5" />
+                    <line x1="30" y1="170" x2="35.86" y2="164.14" />
+                    <line x1="14.64" y1="141.42" x2="21.5" y2="148.28" />
+                    <line x1="10" y1="100" x2="20" y2="100" />
+                    <line x1="14.64" y1="58.58" x2="21.5" y2="65.44" />
+                    <line x1="30" y1="30" x2="35.86" y2="35.86" />
+                    <line x1="58.58" y1="14.64" x2="51.72" y2="21.5" />
+                </g>
+                
+                <!-- Centro do relógio (ponto central) -->
+                <circle cx="100" cy="100" r="5" fill="url(#goldRadial)" />
+                
+                <!-- Ponteiro das horas -->
+                <line class="hour-hand" x1="100" y1="100" x2="100" y2="60" stroke="url(#goldGradient)" stroke-width="5" stroke-linecap="round" />
+                
+                <!-- Ponteiro dos minutos -->
+                <line class="minute-hand" x1="100" y1="100" x2="100" y2="40" stroke="url(#goldGradient)" stroke-width="3" stroke-linecap="round" />
+                
+                <!-- Ponteiro dos segundos (smooth sweep) -->
+                <line class="second-hand" x1="100" y1="100" x2="100" y2="30" stroke="#FFD700" stroke-width="1.5" stroke-linecap="round" opacity="0.8" />
+            </svg>
+        </div>
+    </div>
+    <!-- FIM DO RELÓGIO -->
+
+    <script src="clock.js"></script>
+
 </body>
 </html>
