@@ -133,6 +133,8 @@
                     <button class="filtro-btn" data-filtro="paisagem">Paisagens</button>
                     <button class="filtro-btn" data-filtro="agua">Lagos & Águas</button>
                     <button class="filtro-btn" data-filtro="golden">Golden Hour</button>
+                    <button class="filtro-btn" data-filtro="retrato">Retratos</button>
+                    <button class="filtro-btn" data-filtro="urbano">Urbano</button>
                 </div>
 
                 <!-- Grid Masonry -->
@@ -217,6 +219,105 @@
                             <p>O sol se despede pintando o céu em chamas</p>
                         </div>
                     </div>
+                    <div class="masonry-item masonry-tall reveal" data-categoria="retrato" onclick="openLightbox(9)">
+                        <img src="images/gallery_10_noite_quente.jpg" alt="Noite Quente" loading="lazy">
+                        <div class="masonry-overlay">
+                            <span class="masonry-tag">Retrato</span>
+                            <h3>Noite Quente</h3>
+                            <p>A intensidade de um olhar sob as luzes da noite</p>
+                        </div>
+                    </div>
+
+                    <div class="masonry-item reveal" data-categoria="paisagem" onclick="openLightbox(10)">
+                        <img src="images/gallery_11_planta.jpg" alt="Natureza Viva" loading="lazy">
+                        <div class="masonry-overlay">
+                            <span class="masonry-tag">Natureza</span>
+                            <h3>Natureza Viva</h3>
+                            <p>A delicadeza que brota entre o concreto</p>
+                        </div>
+                    </div>
+
+                    <div class="masonry-item masonry-tall reveal" data-categoria="urbano" onclick="openLightbox(11)">
+                        <img src="images/gallery_12_rua_serra.jpg" alt="Rua da Serra" loading="lazy">
+                        <div class="masonry-overlay">
+                            <span class="masonry-tag">Urbano</span>
+                            <h3>Rua da Serra</h3>
+                            <p>Onde o asfalto encontra a alma do lugar</p>
+                        </div>
+                    </div>
+
+                    <div class="masonry-item reveal" data-categoria="retrato" onclick="openLightbox(12)">
+                        <img src="images/gallery_13_cuba.jpg" alt="Cuba" loading="lazy">
+                        <div class="masonry-overlay">
+                            <span class="masonry-tag">Retrato</span>
+                            <h3>Cuba</h3>
+                            <p>Cores e alma do Caribe em um único frame</p>
+                        </div>
+                    </div>
+
+                    <div class="masonry-item masonry-wide reveal" data-categoria="golden" onclick="openLightbox(13)">
+                        <img src="images/gallery_14_dezembro.jpg" alt="Dezembro" loading="lazy">
+                        <div class="masonry-overlay">
+                            <span class="masonry-tag">Golden Hour</span>
+                            <h3>Dezembro</h3>
+                            <p>O calor dourado de um fim de tarde inesquecível</p>
+                        </div>
+                    </div>
+
+                    <div class="masonry-item masonry-tall reveal" data-categoria="retrato" onclick="openLightbox(14)">
+                        <img src="images/gallery_15_syre.jpg" alt="Syre" loading="lazy">
+                        <div class="masonry-overlay">
+                            <span class="masonry-tag">Retrato</span>
+                            <h3>Syre</h3>
+                            <p>A expressão que transcende a lente</p>
+                        </div>
+                    </div>
+
+                    <div class="masonry-item reveal" data-categoria="paisagem" onclick="openLightbox(15)">
+                        <img src="images/gallery_16_paisagem.jpg" alt="Paisagem" loading="lazy">
+                        <div class="masonry-overlay">
+                            <span class="masonry-tag">Paisagem</span>
+                            <h3>Horizonte Infinito</h3>
+                            <p>Onde o céu abraça a terra em silêncio</p>
+                        </div>
+                    </div>
+
+                    <div class="masonry-item reveal" data-categoria="retrato" onclick="openLightbox(16)">
+                        <img src="images/gallery_17_retrato.jpg" alt="Retrato" loading="lazy">
+                        <div class="masonry-overlay">
+                            <span class="masonry-tag">Retrato</span>
+                            <h3>Essência</h3>
+                            <p>A verdade capturada em um instante</p>
+                        </div>
+                    </div>
+
+                    <div class="masonry-item masonry-wide reveal" data-categoria="golden" onclick="openLightbox(17)">
+                        <img src="images/gallery_18_momento.jpg" alt="Momento" loading="lazy">
+                        <div class="masonry-overlay">
+                            <span class="masonry-tag">Golden Hour</span>
+                            <h3>Momento Eterno</h3>
+                            <p>Quando a luz dourada congela o tempo</p>
+                        </div>
+                    </div>
+
+                    <div class="masonry-item masonry-tall reveal" data-categoria="paisagem" onclick="openLightbox(18)">
+                        <img src="images/gallery_19_cena.jpg" alt="Cena" loading="lazy">
+                        <div class="masonry-overlay">
+                            <span class="masonry-tag">Paisagem</span>
+                            <h3>Cena Natural</h3>
+                            <p>A grandiosidade que só a natureza compõe</p>
+                        </div>
+                    </div>
+
+                    <div class="masonry-item reveal" data-categoria="urbano" onclick="openLightbox(19)">
+                        <img src="images/gallery_20_composicao.jpg" alt="Composição" loading="lazy">
+                        <div class="masonry-overlay">
+                            <span class="masonry-tag">Urbano</span>
+                            <h3>Composição</h3>
+                            <p>Geometria e luz em perfeita harmonia</p>
+                        </div>
+                    </div>
+
                 </div><!--masonry-grid-->
 
                 <div class="galeria-cta">
@@ -240,7 +341,7 @@
                 </div>
             </div>
             <div class="lightbox-counter">
-                <span id="lightbox-current">1</span> / <span id="lightbox-total">9</span>
+                <span id="lightbox-current">1</span> / <span id="lightbox-total">20</span>
             </div>
         </div><!--lightbox-->
   
@@ -261,6 +362,28 @@
             </div>
         </div>
     </footer>
+
+    <!-- MINI-PLAYER FLUTUANTE - SADE ADU VIBE -->
+    <div class="music-player" id="musicPlayer">
+        <button class="music-toggle" id="musicToggle" onclick="togglePlayer()">
+            <i class="bi bi-music-note-beamed" id="musicIcon"></i>
+        </button>
+        <div class="music-panel" id="musicPanel">
+            <div class="music-header">
+                <span class="music-vibe">ATIVE A VIBE</span>
+                <span class="music-genre">Sade Adu & Chill</span>
+            </div>
+            <iframe id="spotifyEmbed" style="border-radius:12px; border:none;" 
+                src="" 
+                width="280" height="152" 
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                loading="lazy"></iframe>
+            <div class="music-footer">
+                <span>Powered by Spotify</span>
+            </div>
+        </div>
+    </div>
+    <!-- FIM DO MINI-PLAYER -->
 
     <!-- RELÓGIO ANALÓGICO FLUTUANTE -->
     <div class="floating-clock">
@@ -326,6 +449,8 @@
 
     <script src="clock.js"></script>
     <script src="gallery.js"></script>
+    <script src="player.js"></script>
+    <script src="tilt.js"></script>
 
 </body>
 </html>

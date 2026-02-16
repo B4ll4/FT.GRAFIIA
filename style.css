@@ -876,28 +876,11 @@ section.galeria-imersiva::before {
 }
 
 /* Ponteiros do relógio com animação suave */
-.hour-hand {
-    transform-origin: 100px 100px;
-    transition: transform 0.5s cubic-bezier(0.4, 0.0, 0.2, 1);
-}
-
-.minute-hand {
-    transform-origin: 100px 100px;
-    transition: transform 0.5s cubic-bezier(0.4, 0.0, 0.2, 1);
-}
-
+/* Ponteiros controlados 100% via JS (requestAnimationFrame) */
+.hour-hand,
+.minute-hand,
 .second-hand {
     transform-origin: 100px 100px;
-    animation: smoothSweep 60s linear infinite;
-}
-
-@keyframes smoothSweep {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
 }
 
 /* Responsividade para tablets */
@@ -940,5 +923,152 @@ section.galeria-imersiva::before {
 
     .clock-svg line {
         stroke-width: 1px !important;
+    }
+}
+
+/* ==========================================
+   MINI-PLAYER FLUTUANTE - SADE ADU VIBE
+   ========================================== */
+.music-player {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    z-index: 9999;
+}
+
+.music-toggle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid rgba(184, 134, 11, 0.6);
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+    color: darkgoldenrod;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 
+        0 0 30px rgba(184, 134, 11, 0.3),
+        0 4px 20px rgba(0, 0, 0, 0.5);
+    animation: pulseGlow 3s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+    0%, 100% { box-shadow: 0 0 30px rgba(184, 134, 11, 0.3), 0 4px 20px rgba(0, 0, 0, 0.5); }
+    50% { box-shadow: 0 0 45px rgba(184, 134, 11, 0.5), 0 4px 20px rgba(0, 0, 0, 0.5); }
+}
+
+.music-toggle:hover {
+    transform: scale(1.1);
+    background: rgba(184, 134, 11, 0.15);
+    box-shadow: 0 0 50px rgba(184, 134, 11, 0.5), 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.music-toggle.active {
+    background: darkgoldenrod;
+    color: black;
+    animation: none;
+    box-shadow: 0 0 40px rgba(184, 134, 11, 0.6), 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.music-panel {
+    position: absolute;
+    bottom: 75px;
+    left: 0;
+    width: 310px;
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(184, 134, 11, 0.3);
+    border-radius: 16px;
+    padding: 20px 15px 15px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px) scale(0.95);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.7), 0 0 30px rgba(184, 134, 11, 0.1);
+}
+
+.music-panel.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0) scale(1);
+}
+
+.music-header {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.music-vibe {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 14px;
+    color: darkgoldenrod;
+    letter-spacing: 3px;
+    margin-bottom: 4px;
+}
+
+.music-genre {
+    display: block;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-size: 12px;
+    color: #888;
+    font-style: italic;
+}
+
+.music-footer {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 10px;
+    color: #555;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 1px;
+}
+
+/* Responsividade do Player */
+@media screen and (max-width: 768px) {
+    .music-player {
+        bottom: 15px;
+        left: 15px;
+    }
+
+    .music-toggle {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+    }
+
+    .music-panel {
+        width: 260px;
+        bottom: 65px;
+    }
+
+    .music-panel iframe {
+        width: 230px !important;
+        height: 130px !important;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .music-toggle {
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+    }
+
+    .music-panel {
+        width: 240px;
+        left: -5px;
+        padding: 15px 10px 10px;
+    }
+
+    .music-panel iframe {
+        width: 220px !important;
+        height: 120px !important;
     }
 }
