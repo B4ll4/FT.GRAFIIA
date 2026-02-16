@@ -1,45 +1,44 @@
 /**
- * RELÓGIO ANALÓGICO LUXUOSO - FT.GRAFIIA
- * Hora real do sistema com Smooth Sweep contínuo (requestAnimationFrame)
- * Estética: Black & Gold
+ * RELÓGIO DIGITAL DE LUXO - FT.GRAFIIA
+ * Sincronizado com o sistema do usuário (PC/Celular)
+ * Atualização a cada segundo com animação suave
  */
 
 (function() {
-    function updateClock() {
-        const now = new Date();
-        
-        const hours = now.getHours() % 12;
-        const minutes = now.getMinutes();
-        const seconds = now.getSeconds();
-        const ms = now.getMilliseconds();
+    var hoursEl = document.getElementById('clockHours');
+    var minutesEl = document.getElementById('clockMinutes');
+    var secondsEl = document.getElementById('clockSeconds');
+    var dateEl = document.getElementById('clockDate');
 
-        // Smooth sweep: inclui milissegundos para movimento 100% contínuo
-        const hourDeg   = (hours * 30) + (minutes * 0.5) + (seconds * (0.5/60));
-        const minuteDeg = (minutes * 6) + (seconds * 0.1) + (ms * 0.0001);
-        const secondDeg = (seconds * 6) + (ms * 0.006);
+    var diasSemana = ['DOM', 'SEG', 'TER', 'QUA', 'QUI', 'SEX', 'SÁB'];
+    var meses = ['JAN', 'FEV', 'MAR', 'ABR', 'MAI', 'JUN', 'JUL', 'AGO', 'SET', 'OUT', 'NOV', 'DEZ'];
 
-        // Aplicar em TODOS os relógios na página (index + portfolio)
-        const hourHands   = document.querySelectorAll('.hour-hand');
-        const minuteHands = document.querySelectorAll('.minute-hand');
-        const secondHands = document.querySelectorAll('.second-hand');
-
-        hourHands.forEach(h   => h.setAttribute('transform', 'rotate(' + hourDeg + ' 100 100)'));
-        minuteHands.forEach(m => m.setAttribute('transform', 'rotate(' + minuteDeg + ' 100 100)'));
-        secondHands.forEach(s => s.setAttribute('transform', 'rotate(' + secondDeg + ' 100 100)'));
-
-        requestAnimationFrame(updateClock);
+    function pad(n) {
+        return n < 10 ? '0' + n : '' + n;
     }
 
-    // Iniciar imediatamente com requestAnimationFrame (60fps = ultra smooth)
-    requestAnimationFrame(updateClock);
+    function updateClock() {
+        var now = new Date();
 
-    // Efeito de brilho ao hover
-    document.querySelectorAll('.floating-clock').forEach(function(clock) {
-        clock.addEventListener('mouseenter', function() {
-            this.style.boxShadow = '0 0 60px rgba(184,134,11,0.6), inset 0 0 30px rgba(184,134,11,0.2), 0 8px 32px rgba(0,0,0,0.8)';
-        });
-        clock.addEventListener('mouseleave', function() {
-            this.style.boxShadow = '';
-        });
-    });
+        var h = pad(now.getHours());
+        var m = pad(now.getMinutes());
+        var s = pad(now.getSeconds());
+
+        if (hoursEl) hoursEl.textContent = h;
+        if (minutesEl) minutesEl.textContent = m;
+        if (secondsEl) secondsEl.textContent = s;
+
+        if (dateEl) {
+            var dia = diasSemana[now.getDay()];
+            var num = now.getDate();
+            var mes = meses[now.getMonth()];
+            dateEl.textContent = dia + ', ' + num + ' ' + mes;
+        }
+    }
+
+    // Atualizar imediatamente
+    updateClock();
+
+    // Atualizar a cada segundo
+    setInterval(updateClock, 1000);
 })();
