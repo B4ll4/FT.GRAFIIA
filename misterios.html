@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mistérios | Canudos - FT.GRAFIIA</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="misterios.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body class="misterios-body">
+    
+    <!-- EFEITO LANTERNA DIVINA -->
+    <div class="divine-lantern" id="lantern"></div>
+
+    <!-- BACKGROUND DE PARTÍCULAS -->
+    <canvas id="particleCanvas"></canvas>
+
+    <main class="misterios-container">
+        
+        <!-- SEÇÃO NARRATIVA PARALLAX -->
+        <section class="narrative-section">
+            <div class="narrative-content">
+                <h1 class="reveal-text">Canudos é minha cidade natal,</h1>
+                <h1 class="reveal-text">é onde a luz do meu ser encandeia.</h1>
+            </div>
+        </section>
+
+        <section class="narrative-section">
+            <div class="narrative-content">
+                <h1 class="reveal-text">É onde minha energia é recarregada,</h1>
+                <h1 class="reveal-text">é o paraíso no meio do nada.</h1>
+            </div>
+        </section>
+
+        <!-- GALERIA 3D FLUTUANTE -->
+        <section class="floating-gallery">
+            <div class="floating-item depth-1" style="top: 10%; left: 15%;">
+                <img src="images/canudos_01.jpg" alt="Canudos - Luz Divina">
+                <div class="item-caption">Luz Divina</div>
+            </div>
+            
+            <div class="floating-item depth-2" style="top: 40%; right: 10%;">
+                <img src="images/gallery_04_sertao.jpg" alt="Sertão">
+                <div class="item-caption">Raízes</div>
+            </div>
+
+            <div class="floating-item depth-3" style="top: 70%; left: 20%;">
+                <img src="images/gallery_03_lago.jpg" alt="Águas de Canudos">
+                <div class="item-caption">Renascimento</div>
+            </div>
+        </section>
+
+        <section class="narrative-section">
+            <div class="narrative-content">
+                <h1 class="reveal-text">Onde ressurgimos pós-destruição,</h1>
+                <h1 class="reveal-text">Canudos renasceu e Deus nos abençoou</h1>
+                <h2 class="gold-text">com a luz divina.</h2>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- BOTÃO RETORNAR -->
+    <a href="index.html" class="return-reality">
+        <span class="return-icon"><i class="bi bi-arrow-left"></i></span>
+        <span class="return-text">Retornar à Realidade</span>
+    </a>
+
+    <!-- RELÓGIO DIGITAL (Mantido para consistência) -->
+    <div class="digital-clock" id="digitalClock">
+        <div class="clock-time">
+            <span class="clock-hours" id="clockHours">00</span>
+            <span class="clock-separator">:</span>
+            <span class="clock-minutes" id="clockMinutes">00</span>
+            <span class="clock-separator clock-blink">:</span>
+            <span class="clock-seconds" id="clockSeconds">00</span>
+        </div>
+        <div class="clock-date" id="clockDate"></div>
+    </div>
+
+    <script src="clock.js"></script>
+    <script src="misterios.js"></script>
+</body>
+</html>

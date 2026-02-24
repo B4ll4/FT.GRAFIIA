@@ -1094,3 +1094,21 @@ section.galeria-imersiva::before {
         height: 120px !important;
     }
 }
+
+/* TRANSIÇÃO DEEP FADE */
+.mysteries-link {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.5s ease;
+}
+
+.mysteries-link:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(184, 134, 11, 0.3);
+}
+
+body.fade-out {
+    opacity: 0;
+    background-color: #000;
+    transition: opacity 1.5s ease-in-out;
+}
