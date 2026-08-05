@@ -6,6 +6,7 @@
     <title>Mistérios | Canudos - FT.GRAFIIA</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="misterios.css">
+    <link rel="stylesheet" href="caderno.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -90,6 +91,41 @@
         <span class="return-text">Retornar à Realidade</span>
     </a>
 
+    <!-- CADERNO DE VISITAS -->
+    <div class="guestbook-overlay" id="guestbookOverlay"></div>
+    <div class="guestbook-trigger" id="guestbookTrigger">
+        <span class="guestbook-label">Caderno de Visitas</span>
+        <div class="guestbook-icon">
+            <i class="bi bi-journal-text"></i>
+        </div>
+    </div>
+
+    <div class="guestbook-drawer" id="guestbookDrawer">
+        <div class="guestbook-header">
+            <h2>Caderno de Visitas</h2>
+            <button class="guestbook-close" id="guestbookClose">&times;</button>
+        </div>
+        
+        <div class="guestbook-content">
+            <form class="guestbook-form" id="guestbookForm">
+                <div class="form-group">
+                    <label for="guestInsta">@ do Instagram (opcional)</label>
+                    <input type="text" id="guestInsta" placeholder="@seuusuario">
+                </div>
+                <div class="form-group">
+                    <label for="guestMsg">Sua mensagem / impressão</label>
+                    <textarea id="guestMsg" placeholder="O que você sentiu ao navegar por aqui?" required></textarea>
+                    <span class="error-msg" id="errorMsg">Sua mensagem contém termos não permitidos.</span>
+                </div>
+                <button type="submit" class="btn-publish">Publicar</button>
+            </form>
+
+            <div class="guestbook-messages" id="guestbookMessages">
+                <!-- Comentários serão renderizados aqui -->
+            </div>
+        </div>
+    </div>
+
     <!-- RELÓGIO DIGITAL (Mantido para consistência) -->
     <div class="digital-clock" id="digitalClock">
         <div class="clock-time">
@@ -104,5 +140,6 @@
 
     <script src="clock.js"></script>
     <script src="misterios.js"></script>
+    <script src="caderno.js"></script>
 </body>
 </html>

@@ -14,6 +14,7 @@
     <!--fim do bootstrapsicons-->
 
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="caderno.css">
     <title>Ft.grafiia | Muito além do que se vê</title>
 </head>
 <body>
@@ -385,6 +386,41 @@
     </div>
     <!-- FIM DO MINI-PLAYER -->
 
+    <!-- CADERNO DE VISITAS -->
+    <div class="guestbook-overlay" id="guestbookOverlay"></div>
+    <div class="guestbook-trigger" id="guestbookTrigger">
+        <span class="guestbook-label">Caderno de Visitas</span>
+        <div class="guestbook-icon">
+            <i class="bi bi-journal-text"></i>
+        </div>
+    </div>
+
+    <div class="guestbook-drawer" id="guestbookDrawer">
+        <div class="guestbook-header">
+            <h2>Caderno de Visitas</h2>
+            <button class="guestbook-close" id="guestbookClose">&times;</button>
+        </div>
+        
+        <div class="guestbook-content">
+            <form class="guestbook-form" id="guestbookForm">
+                <div class="form-group">
+                    <label for="guestInsta">@ do Instagram (opcional)</label>
+                    <input type="text" id="guestInsta" placeholder="@seuusuario">
+                </div>
+                <div class="form-group">
+                    <label for="guestMsg">Sua mensagem / impressão</label>
+                    <textarea id="guestMsg" placeholder="O que você sentiu ao navegar por aqui?" required></textarea>
+                    <span class="error-msg" id="errorMsg">Sua mensagem contém termos não permitidos.</span>
+                </div>
+                <button type="submit" class="btn-publish">Publicar</button>
+            </form>
+
+            <div class="guestbook-messages" id="guestbookMessages">
+                <!-- Comentários serão renderizados aqui -->
+            </div>
+        </div>
+    </div>
+
     <!-- RELÓGIO DIGITAL DE LUXO -->
     <div class="digital-clock" id="digitalClock">
         <div class="clock-time">
@@ -402,6 +438,7 @@
     <script src="gallery.js"></script>
     <script src="player.js"></script>
     <script src="tilt.js"></script>
+    <script src="caderno.js"></script>
 
 </body>
 </html>
