@@ -15,6 +15,7 @@
 
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="caderno.css">
+    <link rel="stylesheet" href="videos.css">
     <title>Ft.grafiia | Muito além do que se vê</title>
 </head>
 <body>
@@ -33,6 +34,7 @@
                     <li><a href="#especialidades">Especialidades</a></li>
                     <li><a href="#sobre">Sobre</a></li>
                     <li><a href="#galeria">Fotografias</a></li>
+                    <li><a href="#videos">Vídeos</a></li>
                     <li><a href="https://www.instagram.com/ft.grafiia?igsh=ZXJramhtZzdjMTBt" target="_blank">Portfólio</a></li> 
                 </ul>
             </nav>
@@ -121,6 +123,65 @@
                 </div><!--flex-->
             </div><!--interface-->
         </section><!--sobre-->
+
+        <!-- SEÇÃO VÍDEOS -->
+        <section class="videos" id="videos">
+            <div class="interface">
+                <h2 class="titulo">MEUS <span>VÍDEOS.</span></h2>
+                <div class="videos-grid">
+                    
+                    <div class="video-card" data-type="mp4" data-src="images/portfolio_01.mp4">
+                        <div class="video-thumb">
+                            <img src="images/portfolio_01.jpg" alt="Thumbnail Vídeo 01">
+                            <div class="video-play-icon">
+                                <i class="bi bi-play-fill"></i>
+                            </div>
+                        </div>
+                        <div class="video-info">
+                            <h3>Essência Visual</h3>
+                            <p>Um olhar cinematográfico sobre o cotidiano.</p>
+                        </div>
+                    </div>
+
+                    <div class="video-card" data-type="youtube" data-src="dQw4w9WgXcQ">
+                        <div class="video-thumb">
+                            <img src="images/gallery_09_por_do_sol.jpg" alt="Thumbnail Vídeo 02">
+                            <div class="video-play-icon">
+                                <i class="bi bi-play-fill"></i>
+                            </div>
+                        </div>
+                        <div class="video-info">
+                            <h3>Horizonte Dourado</h3>
+                            <p>A magia do pôr do sol em movimento.</p>
+                        </div>
+                    </div>
+
+                    <div class="video-card" data-type="mp4" data-src="images/portfolio_02.mp4">
+                        <div class="video-thumb">
+                            <img src="images/gallery_10_noite_quente.jpg" alt="Thumbnail Vídeo 03">
+                            <div class="video-play-icon">
+                                <i class="bi bi-play-fill"></i>
+                            </div>
+                        </div>
+                        <div class="video-info">
+                            <h3>Noite Urbana</h3>
+                            <p>Luzes e sombras que contam histórias.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- VIDEO MODAL -->
+        <div class="video-modal" id="videoModal">
+            <div class="video-modal-content">
+                <span class="video-modal-close" id="closeVideoModal">&times;</span>
+                <div class="video-container" id="videoContainer">
+                    <!-- Vídeo será inserido aqui via JS -->
+                </div>
+            </div>
+        </div>
 
         <!-- SEÇÃO GALERIA IMERSIVA -->
         <section class="galeria-imersiva" id="galeria">
@@ -440,6 +501,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="tilt.js"></script>
     <script src="caderno.js"></script>
+    <script src="videos.js"></script>
 
 </body>
 </html>
