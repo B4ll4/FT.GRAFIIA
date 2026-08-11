@@ -1,4 +1,4 @@
-/* LÓGICA DE VÍDEOS - FT.GRAFIIA™ */
+/* LÓGICA DE VÍDEOS - EXCLUSIVO HTML5 NATIVO - FT.GRAFIIA™ */
 
 document.addEventListener('DOMContentLoaded', () => {
     const videoModal = document.getElementById('videoModal');
@@ -11,28 +11,39 @@ document.addEventListener('DOMContentLoaded', () => {
     // Abrir Modal
     videoCards.forEach(card => {
         card.addEventListener('click', () => {
-            const videoType = card.getAttribute('data-type');
             const videoSrc = card.getAttribute('data-src');
             
             videoContainer.innerHTML = '';
 
-            if (videoType === 'youtube') {
-                videoContainer.innerHTML = `<iframe src="https://www.youtube.com/embed/${videoSrc}?autoplay=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
-            } else if (videoType === 'vimeo') {
-                videoContainer.innerHTML = `<iframe src="https://player.vimeo.com/video/${videoSrc}?autoplay=1" allow="autoplay; fullscreen" allowfullscreen></iframe>`;
-            } else if (videoType === 'mp4') {
-                videoContainer.innerHTML = `<video src="${videoSrc}" controls autoplay></video>`;
-            }
+            // Implementação nativa HTML5
+            videoContainer.innerHTML = `
+                <video controls playsinline preload="auto" width="100%" style="width:100%; height:100%; object-fit:contain;">
+                    <source src="${videoSrc}" type="video/mp4">
+                    Seu navegador não suporta a reprodução de vídeos.
+                </video>
+            `;
 
             videoModal.classList.add('active');
             document.body.style.overflow = 'hidden'; // Bloquear scroll
+            
+            // Iniciar o vídeo automaticamente após o carregamento
+            const videoElement = videoContainer.querySelector('video');
+            if (videoElement) {
+                videoElement.play().catch(error => {
+                    console.log("Autoplay bloqueado pelo navegador, aguardando interação.");
+                });
+            }
         });
     });
 
     // Fechar Modal
     const closeFunc = () => {
+        const videoElement = videoContainer.querySelector('video');
+        if (videoElement) {
+            videoElement.pause();
+        }
         videoModal.classList.remove('active');
-        videoContainer.innerHTML = ''; // Parar o vídeo
+        videoContainer.innerHTML = ''; // Limpar conteúdo para garantir parada total
         document.body.style.overflow = 'auto';
     };
 
