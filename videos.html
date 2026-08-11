@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--GOOGLE FONTS-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">    
+    
+    <!--bootstrapsicons-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="videos.css">
+    <link rel="stylesheet" href="caderno.css">
+    <title>Vídeos | Ft.grafiia</title>
+</head>
+<body>
+    
+    <header>
+        <div class="interface">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/LOGO.png" alt="logo do site">
+                </a>
+            </div><!--logo-->
+
+            <nav class="menu-desktop">
+                <ul>
+                    <li><a href="index.html#inicio">Início</a></li>
+                    <li><a href="index.html#especialidades">Especialidades</a></li>
+                    <li><a href="index.html#sobre">Sobre</a></li>
+                    <li><a href="index.html#galeria">Fotografias</a></li>
+                    <li><a href="videos.html">Vídeos</a></li>
+                    <li><a href="https://www.instagram.com/ft.grafiia?igsh=ZXJramhtZzdjMTBt" target="_blank">Portfólio</a></li> 
+                </ul>
+            </nav>
+
+            <div class="btn-contato">
+                <a href="https://www.instagram.com/ft.grafiia/" target="_blank">
+                    <button>Contato</button>
+                </a>
+            </div><!--btn-contato-->
+        </div><!--interface-->
+    </header>
+    
+    <main>
+        <section class="portfolio-hero">
+            <div class="interface">
+                <h1>MEUS VÍDEOS</h1>
+                <p>Momentos capturados em movimento e emoção</p>
+            </div>
+        </section>
+
+        <section class="videos">
+            <div class="interface">
+                <div class="videos-grid">
+                    
+                    <div class="video-card" data-type="youtube" data-src="dQw4w9WgXcQ">
+                        <div class="video-thumb">
+                            <img src="images/gallery_09_por_do_sol.jpg" alt="Horizonte Dourado">
+                            <div class="video-play-icon">
+                                <i class="bi bi-play-fill"></i>
+                            </div>
+                        </div>
+                        <div class="video-info">
+                            <h3>Horizonte Dourado</h3>
+                            <p>A magia do pôr do sol em movimento.</p>
+                        </div>
+                    </div>
+
+                    <div class="video-card" data-type="youtube" data-src="jNQXAC9IVRw">
+                        <div class="video-thumb">
+                            <img src="images/gallery_01_cidade_montanha.jpg" alt="Essência Visual">
+                            <div class="video-play-icon">
+                                <i class="bi bi-play-fill"></i>
+                            </div>
+                        </div>
+                        <div class="video-info">
+                            <h3>Essência Visual</h3>
+                            <p>Um olhar cinematográfico sobre o cotidiano.</p>
+                        </div>
+                    </div>
+
+                    <div class="video-card" data-type="youtube" data-src="9bZkp7q19f0">
+                        <div class="video-thumb">
+                            <img src="images/gallery_10_noite_quente.jpg" alt="Noite Urbana">
+                            <div class="video-play-icon">
+                                <i class="bi bi-play-fill"></i>
+                            </div>
+                        </div>
+                        <div class="video-info">
+                            <h3>Noite Urbana</h3>
+                            <p>Luzes e sombras que contam histórias.</p>
+                        </div>
+                    </div>
+
+                    <div class="video-card" data-type="youtube" data-src="L3wKzyIN1qY">
+                        <div class="video-thumb">
+                            <img src="images/gallery_03_lago_nuvens.jpg" alt="Reflexos">
+                            <div class="video-play-icon">
+                                <i class="bi bi-play-fill"></i>
+                            </div>
+                        </div>
+                        <div class="video-info">
+                            <h3>Reflexos da Alma</h3>
+                            <p>Quando a água encontra o céu.</p>
+                        </div>
+                    </div>
+
+                    <div class="video-card" data-type="youtube" data-src="V-_O7nl0Ii0">
+                        <div class="video-thumb">
+                            <img src="images/gallery_04_campo_sertao.jpg" alt="Sertão Vivo">
+                            <div class="video-play-icon">
+                                <i class="bi bi-play-fill"></i>
+                            </div>
+                        </div>
+                        <div class="video-info">
+                            <h3>Sertão Vivo</h3>
+                            <p>A força da natureza em cada frame.</p>
+                        </div>
+                    </div>
+
+                    <div class="video-card" data-type="youtube" data-src="M7lc1UVf-VE">
+                        <div class="video-thumb">
+                            <img src="images/gallery_18_momento.jpg" alt="Instante Eterno">
+                            <div class="video-play-icon">
+                                <i class="bi bi-play-fill"></i>
+                            </div>
+                        </div>
+                        <div class="video-info">
+                            <h3>Instante Eterno</h3>
+                            <p>O tempo para quando a luz é perfeita.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- VIDEO MODAL -->
+        <div class="video-modal" id="videoModal">
+            <div class="video-modal-content">
+                <span class="video-modal-close" id="closeVideoModal">&times;</span>
+                <div class="video-container" id="videoContainer">
+                    <!-- Vídeo será inserido aqui via JS -->
+                </div>
+            </div>
+        </div>
+
+        <section class="cta-portfolio">
+            <div class="interface">
+                <h2>Quer um vídeo exclusivo?</h2>
+                <p>Transformamos sua história em uma experiência cinematográfica</p>
+                <a href="https://www.instagram.com/ft.grafiia/" target="_blank">
+                    <button>Solicitar Orçamento</button>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="interface">
+            <div class="flex">
+                <div class="logo-footer">
+                    <img src="images/LOGO.png" alt="Logo Ft.grafiia" width="150">
+                </div>
+                <div class="txt-footer">
+                    <p>&copy; 2026 Ft.grafiia. Todos os direitos reservados.</p>
+                </div>
+                <div class="social-footer">
+                    <a href="https://www.instagram.com/ft.grafiia/" target="_blank"><i class="bi bi-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- CADERNO DE VISITAS -->
+    <div class="guestbook-overlay" id="guestbookOverlay"></div>
+    <div class="guestbook-trigger" id="guestbookTrigger">
+        <span class="guestbook-label">Caderno de Visitas</span>
+        <div class="guestbook-icon">
+            <i class="bi bi-journal-text"></i>
+        </div>
+    </div>
+
+    <div class="guestbook-drawer" id="guestbookDrawer">
+        <div class="guestbook-header">
+            <h2>Caderno de Visitas</h2>
+            <button class="guestbook-close" id="guestbookClose">&times;</button>
+        </div>
+        
+        <div class="guestbook-content">
+            <form class="guestbook-form" id="guestbookForm">
+                <div class="form-group">
+                    <label for="guestInsta">@ do Instagram (opcional)</label>
+                    <input type="text" id="guestInsta" placeholder="@seuusuario">
+                </div>
+                <div class="form-group">
+                    <label for="guestMsg">Sua mensagem / impressão</label>
+                    <textarea id="guestMsg" placeholder="O que você sentiu ao navegar por aqui?" required></textarea>
+                    <span class="error-msg" id="errorMsg">Sua mensagem contém termos não permitidos.</span>
+                </div>
+                <button type="submit" class="btn-publish">Publicar</button>
+            </form>
+
+            <div class="guestbook-messages" id="guestbookMessages">
+                <!-- Comentários serão renderizados aqui -->
+            </div>
+        </div>
+    </div>
+
+    <!-- RELÓGIO DIGITAL DE LUXO -->
+    <div class="digital-clock" id="digitalClock">
+        <div class="clock-time">
+            <span class="clock-hours" id="clockHours">00</span>
+            <span class="clock-separator">:</span>
+            <span class="clock-minutes" id="clockMinutes">00</span>
+            <span class="clock-separator clock-blink">:</span>
+            <span class="clock-seconds" id="clockSeconds">00</span>
+        </div>
+        <div class="clock-date" id="clockDate"></div>
+    </div>
+    <!-- FIM DO RELÓGIO -->
+
+    <!-- MINI-PLAYER FLUTUANTE -->
+    <div class="music-player" id="musicPlayer">
+        <button class="music-toggle" id="musicToggle" onclick="togglePlayer()">
+            <i class="bi bi-music-note-beamed" id="musicIcon"></i>
+        </button>
+        <div class="music-panel" id="musicPanel">
+            <div class="music-header">
+                <span class="music-vibe">ATIVE A VIBE</span>
+                <span class="music-genre">Sade Adu & Chill</span>
+            </div>
+            <iframe id="spotifyEmbed" style="border-radius:12px; border:none;" 
+                src="" 
+                width="280" height="152" 
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                loading="lazy"></iframe>
+            <div class="music-footer">
+                <span>Powered by Spotify</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="clock.js"></script>
+    <script src="player.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="caderno.js"></script>
+    <script src="videos.js"></script>
+
+</body>
+</html>

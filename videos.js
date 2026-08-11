@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeModal = document.getElementById('closeVideoModal');
     const videoCards = document.querySelectorAll('.video-card');
 
+    if (!videoModal || !videoContainer || !closeModal) return;
+
     // Abrir Modal
     videoCards.forEach(card => {
         card.addEventListener('click', () => {
