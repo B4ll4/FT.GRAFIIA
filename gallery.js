@@ -1,11 +1,11 @@
 /**
  * GALERIA IMERSIVA - FT.GRAFIIA
  * Lightbox, Filtros por Categoria, Scroll Reveal e Tilt 3D
- * 20 fotografias
+ * 31 fotografias
  */
 
 // ==========================================
-// DADOS DAS IMAGENS (20 fotos)
+// DADOS DAS IMAGENS (31 fotos)
 // ==========================================
 const galleryData = [
     { src: 'images/gallery_01_cidade_montanha.jpg', title: 'Silhueta Urbana', desc: 'A cidade adormece sob o manto dourado do crepúsculo' },
@@ -27,7 +27,19 @@ const galleryData = [
     { src: 'images/gallery_17_retrato.jpg', title: 'Essência', desc: 'A verdade capturada em um instante' },
     { src: 'images/gallery_18_momento.jpg', title: 'Momento Eterno', desc: 'Quando a luz dourada congela o tempo' },
     { src: 'images/gallery_19_cena.jpg', title: 'Cena Natural', desc: 'A grandiosidade que só a natureza compõe' },
-    { src: 'images/gallery_20_composicao.jpg', title: 'Composição', desc: 'Geometria e luz em perfeita harmonia' }
+    { src: 'images/gallery_20_composicao.jpg', title: 'Composição', desc: 'Geometria e luz em perfeita harmonia' },
+    // NOVAS FOTOS (21-31)
+    { src: 'https://ktmhdxvxwalpnlyfyyva.supabase.co/storage/v1/object/public/FOTOS/HOSANA.jpg', title: 'Hosana: Luz Eterna', desc: 'Uma homenagem especial à luz que nunca se apaga' },
+    { src: 'https://ktmhdxvxwalpnlyfyyva.supabase.co/storage/v1/object/public/FOTOS/atrasdapistaSERRA.jpg', title: 'Sombra da Serra', desc: 'A majestade da serra em um ângulo inexplorado' },
+    { src: 'https://ktmhdxvxwalpnlyfyyva.supabase.co/storage/v1/object/public/FOTOS/portalquenteatualizado.jpg', title: 'Portal do Sol', desc: 'A entrada triunfal da luz em um novo dia' },
+    { src: 'https://ktmhdxvxwalpnlyfyyva.supabase.co/storage/v1/object/public/FOTOS/P1030094.JPG', title: 'Ecos do Silêncio', desc: 'A paz que transborda em cada detalhe da natureza' },
+    { src: 'https://ktmhdxvxwalpnlyfyyva.supabase.co/storage/v1/object/public/FOTOS/P1030096.JPG', title: 'Sussurro do Vento', desc: 'O movimento invisível capturado pela lente' },
+    { src: 'https://ktmhdxvxwalpnlyfyyva.supabase.co/storage/v1/object/public/FOTOS/P1030099.JPG', title: 'Aura Dourada', desc: 'O brilho que emana da terra ao entardecer' },
+    { src: 'https://ktmhdxvxwalpnlyfyyva.supabase.co/storage/v1/object/public/FOTOS/P1030101.JPG', title: 'Traço do Tempo', desc: 'As marcas da história impressas na paisagem' },
+    { src: 'https://ktmhdxvxwalpnlyfyyva.supabase.co/storage/v1/object/public/FOTOS/P1030147.JPG', title: 'Reflexos da Alma', desc: 'A profundidade do ser espelhada na natureza' },
+    { src: 'https://ktmhdxvxwalpnlyfyyva.supabase.co/storage/v1/object/public/FOTOS/P1030617.JPG', title: 'Crepúsculo Profundo', desc: 'A transição mística entre o dia e a noite' },
+    { src: 'https://ktmhdxvxwalpnlyfyyva.supabase.co/storage/v1/object/public/FOTOS/P1030631.JPG', title: 'Geometria Nativa', desc: 'As formas perfeitas que a natureza desenha' },
+    { src: 'https://ktmhdxvxwalpnlyfyyva.supabase.co/storage/v1/object/public/FOTOS/P1030664.JPG', title: 'Fronteira da Noite', desc: 'O último suspiro da luz antes da escuridão' }
 ];
 
 let currentImageIndex = 0;
@@ -42,6 +54,7 @@ function openLightbox(index) {
     var title = document.getElementById('lightbox-title');
     var desc = document.getElementById('lightbox-desc');
     var current = document.getElementById('lightbox-current');
+    var total = document.getElementById('lightbox-total');
     
     img.src = galleryData[index].src;
     img.style.opacity = '1';
@@ -49,6 +62,7 @@ function openLightbox(index) {
     title.textContent = galleryData[index].title;
     desc.textContent = galleryData[index].desc;
     current.textContent = index + 1;
+    total.textContent = galleryData.length;
     
     lightbox.classList.add('active');
     document.body.style.overflow = 'hidden';
