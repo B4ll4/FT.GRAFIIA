@@ -31,15 +31,15 @@ const galleryData = [
     // NOVAS FOTOS (21-31)
     { src: 'https://ktmhdxvxwalpnlyfyyva.supabase.co/storage/v1/object/public/FOTOS/HOSANA.jpg', title: 'Hosana', desc: 'Eterna no meu coração' },
     { src: 'https://ktmhdxvxwalpnlyfyyva.supabase.co/storage/v1/object/public/FOTOS/atrasdapistaSERRA.jpg', title: 'Sombra da Serra', desc: 'A majestade da serra em um ângulo inexplorado' },
-    { src: 'https://ktmhdxvxwalpnlyfyyva.supabase.co/storage/v1/object/public/FOTOS/portalquenteatualizado.jpg', title: 'Portal do Sol', desc: 'A entrada triunfal da luz em um novo dia' },
-    { src: 'https://ktmhdxvxwalpnlyfyyva.supabase.co/storage/v1/object/public/FOTOS/P1030094.JPG', title: 'Ecos do Silêncio', desc: 'A paz que transborda em cada detalhe da natureza' },
-    { src: 'https://ktmhdxvxwalpnlyfyyva.supabase.co/storage/v1/object/public/FOTOS/P1030096.JPG', title: 'Sussurro do Vento', desc: 'O movimento invisível capturado pela lente' },
-    { src: 'https://ktmhdxvxwalpnlyfyyva.supabase.co/storage/v1/object/public/FOTOS/P1030099.JPG', title: 'Aura Dourada', desc: 'O brilho que emana da terra ao entardecer' },
+    { src: 'https://ktmhdxvxwalpnlyfyyva.supabase.co/storage/v1/object/public/FOTOS/portalquenteatualizado.jpg', title: 'Bem-vindo a Canudos', desc: '' },
+    { src: 'https://ktmhdxvxwalpnlyfyyva.supabase.co/storage/v1/object/public/FOTOS/P1030094.JPG', title: 'Descanso em casa', desc: '' },
+    { src: 'https://ktmhdxvxwalpnlyfyyva.supabase.co/storage/v1/object/public/FOTOS/P1030096.JPG', title: 'O menino e a vida', desc: '' },
+    { src: 'https://ktmhdxvxwalpnlyfyyva.supabase.co/storage/v1/object/public/FOTOS/P1030099.JPG', title: 'Pensamento', desc: '' },
     { src: 'https://ktmhdxvxwalpnlyfyyva.supabase.co/storage/v1/object/public/FOTOS/P1030101.JPG', title: 'Traço do Tempo', desc: 'As marcas da história impressas na paisagem' },
-    { src: 'https://ktmhdxvxwalpnlyfyyva.supabase.co/storage/v1/object/public/FOTOS/P1030147.JPG', title: 'Reflexos da Alma', desc: 'A profundidade do ser espelhada na natureza' },
+    { src: 'https://ktmhdxvxwalpnlyfyyva.supabase.co/storage/v1/object/public/FOTOS/P1030147.JPG', title: 'Sobrevivência', desc: '' },
     { src: 'https://ktmhdxvxwalpnlyfyyva.supabase.co/storage/v1/object/public/FOTOS/P1030617.JPG', title: 'Crepúsculo Profundo', desc: 'A transição mística entre o dia e a noite' },
-    { src: 'https://ktmhdxvxwalpnlyfyyva.supabase.co/storage/v1/object/public/FOTOS/P1030631.JPG', title: 'Geometria Nativa', desc: 'As formas perfeitas que a natureza desenha' },
-    { src: 'https://ktmhdxvxwalpnlyfyyva.supabase.co/storage/v1/object/public/FOTOS/P1030664.JPG', title: 'Fronteira da Noite', desc: 'O último suspiro da luz antes da escuridão' }
+    { src: 'https://ktmhdxvxwalpnlyfyyva.supabase.co/storage/v1/object/public/FOTOS/P1030631.JPG', title: '1996, açude de Cocorobó', desc: '' },
+    { src: 'https://ktmhdxvxwalpnlyfyyva.supabase.co/storage/v1/object/public/FOTOS/P1030664.JPG', title: 'Igreja nossa senhora de Fátima', desc: '' }
 ];
 
 let currentImageIndex = 0;
@@ -56,9 +56,42 @@ function openLightbox(index) {
     var current = document.getElementById('lightbox-current');
     var total = document.getElementById('lightbox-total');
     
+    // Efeito especial para "Bem-vindo a Canudos" (Index 22)
+    if (index === 22) {
+        img.style.transition = 'opacity 0.8s ease, transform 1.2s cubic-bezier(0.165, 0.84, 0.44, 1)';
+        img.style.opacity = '0';
+        img.style.transform = 'scale(1.05)';
+        
+        // Criar overlay se não existir
+        let overlay = document.getElementById('canudos-overlay');
+        if (!overlay) {
+            overlay = document.createElement('div');
+            overlay.id = 'canudos-overlay';
+            overlay.className = 'special-overlay';
+            overlay.innerHTML = '<span>Conheça nossa história</span>';
+            document.querySelector('.lightbox-content').appendChild(overlay);
+        }
+        
+        overlay.style.display = 'flex';
+        overlay.style.opacity = '0';
+        
+        setTimeout(() => {
+            img.style.opacity = '1';
+            img.style.transform = 'scale(1)';
+            overlay.style.opacity = '1';
+        }, 50);
+
+        setTimeout(() => {
+            overlay.style.opacity = '0';
+            setTimeout(() => { overlay.style.display = 'none'; }, 800);
+        }, 2500);
+    } else {
+        img.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+        img.style.opacity = '1';
+        img.style.transform = 'scale(1)';
+    }
+    
     img.src = galleryData[index].src;
-    img.style.opacity = '1';
-    img.style.transform = 'scale(1)';
     title.textContent = galleryData[index].title;
     desc.textContent = galleryData[index].desc;
     current.textContent = index + 1;
