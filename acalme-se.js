@@ -174,6 +174,26 @@ document.addEventListener('DOMContentLoaded', () => {
             <!-- Pássaros -->
             <path class="colorable" d="M150 100 Q160 90 170 100 Q180 90 190 100" fill="none" stroke="#000" stroke-width="2"/>
             <path class="colorable" d="M220 130 Q230 120 240 130 Q250 120 260 130" fill="none" stroke="#000" stroke-width="2"/>
+        `,
+        barco: `
+            <!-- Céu -->
+            <rect class="colorable" x="0" y="0" width="800" height="400" fill="#ffffff" stroke="#000" stroke-width="2"/>
+            <!-- Água ao Redor -->
+            <rect class="colorable" x="0" y="400" width="800" height="200" fill="#ffffff" stroke="#000" stroke-width="2"/>
+            <!-- Ondas na Água -->
+            <path class="colorable" d="M100 450 Q200 430 300 450" fill="none" stroke="#000" stroke-width="2"/>
+            <path class="colorable" d="M500 480 Q650 460 800 480" fill="none" stroke="#000" stroke-width="2"/>
+            <!-- Casco do Barco -->
+            <path class="colorable" d="M250 400 L550 400 L500 480 L300 480 Z" fill="#ffffff" stroke="#000" stroke-width="3"/>
+            <!-- Mastro -->
+            <rect class="colorable" x="390" y="150" width="20" height="250" fill="#ffffff" stroke="#000" stroke-width="2"/>
+            <!-- Vela 1 -->
+            <path class="colorable" d="M410 150 L530 350 L410 350 Z" fill="#ffffff" stroke="#000" stroke-width="2"/>
+            <!-- Vela 2 -->
+            <path class="colorable" d="M390 170 L280 350 L390 350 Z" fill="#ffffff" stroke="#000" stroke-width="2"/>
+            <!-- Remos -->
+            <path class="colorable" d="M320 420 L200 520 L220 540 L340 440 Z" fill="#ffffff" stroke="#000" stroke-width="2"/>
+            <path class="colorable" d="M480 420 L600 520 L580 540 L460 440 Z" fill="#ffffff" stroke="#000" stroke-width="2"/>
         `
     };
 
