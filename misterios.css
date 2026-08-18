@@ -161,3 +161,59 @@
     .floating-item { width: 250px; }
     .divine-lantern { background: radial-gradient(circle 150px at var(--x, 50%) var(--y, 50%), transparent 0%, rgba(0, 0, 0, 0.9) 100%); }
 }
+
+/* BOTÃO ACALME-SE */
+.calm-trigger-container {
+    position: fixed;
+    bottom: 100px;
+    left: 40px;
+    z-index: 10000;
+}
+
+.calm-btn {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+    color: #DAA520;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(218, 165, 32, 0.3);
+    padding: 12px 20px;
+    border-radius: 30px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 0 20px rgba(218, 165, 32, 0.1);
+}
+
+.calm-btn i {
+    font-size: 1.2rem;
+    animation: windFloat 3s ease-in-out infinite;
+}
+
+.calm-btn:hover {
+    background: #DAA520;
+    color: #000;
+    border-color: #DAA520;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(218, 165, 32, 0.4);
+}
+
+@keyframes windFloat {
+    0%, 100% { transform: translateX(0) rotate(0); }
+    50% { transform: translateX(5px) rotate(10deg); }
+}
+
+@media (max-width: 768px) {
+    .calm-trigger-container {
+        bottom: 90px;
+        left: 20px;
+    }
+    .return-reality {
+        bottom: 30px;
+        left: 20px;
+    }
+}

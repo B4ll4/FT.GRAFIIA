@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acalme-se | FT.GRAFIIA</title>
+    <!--GOOGLE FONTS-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">    
+    <!--bootstrapsicons-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="acalme-se.css">
+</head>
+<body class="acalme-se-body">
+    
+    <header>
+        <div class="interface">
+            <div class="logo">
+                <a href="index.html">
+                    <span class="logo-text">𝖋𝖙.𝖌𝖗𝖆𝖋𝖎𝖎𝖆𓁹</span>
+                </a>
+            </div><!--logo-->
+
+            <nav class="menu-desktop">
+                <ul>
+                    <li><a href="index.html#inicio">Início</a></li>
+                    <li><a href="index.html#especialidades">Especialidades</a></li>
+                    <li><a href="index.html#sobre">Sobre</a></li>
+                    <li><a href="index.html#galeria">Fotografias</a></li>
+                    <li><a href="videos.html">Vídeos</a></li>
+                    <li><a href="https://www.instagram.com/ft.grafiia?igsh=ZXJramhtZzdjMTBt" target="_blank">Portfólio</a></li> 
+                </ul>
+            </nav>
+
+            <div class="btn-contato">
+                <a href="https://www.instagram.com/ft.grafiia/" target="_blank">
+                    <button>Contato</button>
+                </a>
+            </div><!--btn-contato-->
+        </div><!--interface-->
+    </header>
+
+    <main>
+        <section class="calm-hero">
+            <div class="interface">
+                <h1 class="calm-title">Acalme-se.</h1>
+                <p class="calm-subtitle">Desconecte do mundo e dê cor às memórias.</p>
+            </div>
+        </section>
+
+        <section class="coloring-app">
+            <div class="interface">
+                <div class="coloring-container">
+                    <!-- Barra de Ferramentas -->
+                    <div class="toolbar">
+                        <div class="palette-container">
+                            <span class="toolbar-label">Escolha uma cor:</span>
+                            <div class="palette" id="palette">
+                                <!-- Cores Douradas -->
+                                <div class="color-swatch active" style="background-color: #D4AF37;" data-color="#D4AF37"></div>
+                                <div class="color-swatch" style="background-color: #B8860B;" data-color="#B8860B"></div>
+                                <!-- Tons de Pôr do Sol -->
+                                <div class="color-swatch" style="background-color: #FF7F50;" data-color="#FF7F50"></div>
+                                <div class="color-swatch" style="background-color: #FF4500;" data-color="#FF4500"></div>
+                                <div class="color-swatch" style="background-color: #FFD700;" data-color="#FFD700"></div>
+                                <!-- Tons de Terra/Marrom -->
+                                <div class="color-swatch" style="background-color: #24140A;" data-color="#24140A"></div>
+                                <div class="color-swatch" style="background-color: #5D4037;" data-color="#5D4037"></div>
+                                <div class="color-swatch" style="background-color: #8D6E63;" data-color="#8D6E63"></div>
+                                <!-- Tons Suaves -->
+                                <div class="color-swatch" style="background-color: #F5F5DC;" data-color="#F5F5DC"></div>
+                                <div class="color-swatch" style="background-color: #E0E0E0;" data-color="#E0E0E0"></div>
+                                <!-- Preto e Branco -->
+                                <div class="color-swatch" style="background-color: #FFFFFF;" data-color="#FFFFFF"></div>
+                                <div class="color-swatch" style="background-color: #000000;" data-color="#000000"></div>
+                            </div>
+                        </div>
+
+                        <div class="actions">
+                            <button id="resetBtn" class="action-btn"><i class="bi bi-arrow-counterclockwise"></i> Reiniciar</button>
+                            <div class="image-selector">
+                                <span class="toolbar-label">Mudar Desenho:</span>
+                                <div class="selector-btns">
+                                    <button class="select-img active" data-img="hosana">Hosana</button>
+                                    <button class="select-img" data-img="canudos">Canudos</button>
+                                    <button class="select-img" data-img="serra">Serra</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Área do Desenho -->
+                    <div class="drawing-area" id="drawingArea">
+                        <svg id="coloringSVG" viewBox="0 0 800 600" preserveAspectRatio="xMidYMid meet">
+                            <!-- O conteúdo será injetado via JS -->
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="interface">
+            <div class="flex">
+                <div class="logo-footer">
+                    <span class="logo-text">𝖋𝖙.𝖌𝖗𝖆𝖋𝖎𝖎𝖆𓁹</span>
+                </div>
+                <div class="txt-footer">
+                    <p>&copy; 2026 Ft.grafiia. Todos os direitos reservados.</p>
+                </div>
+                <div class="social-footer">
+                    <a href="https://www.instagram.com/ft.grafiia/" target="_blank"><i class="bi bi-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="acalme-se.js"></script>
+</body>
+</html>
