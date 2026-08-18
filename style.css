@@ -1182,18 +1182,18 @@ body.fade-out {
 .special-overlay span {
     font-family: 'Playfair Display', serif;
     font-size: 42px;
-    color: #D4AF37;
+    color: #24140A;
     text-transform: uppercase;
     letter-spacing: 8px;
     font-weight: 700;
-    text-shadow: 0 0 20px rgba(0, 0, 0, 0.8), 0 0 40px rgba(212, 175, 55, 0.4);
-    animation: goldShimmer 2.5s ease-in-out infinite;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.75), 0 0 20px rgba(255, 255, 255, 0.2);
+    animation: textFloat 2.5s ease-in-out infinite;
     text-align: center;
     padding: 20px;
 }
 
-@keyframes goldShimmer {
-    0%, 100% { opacity: 0.8; transform: scale(1); }
+@keyframes textFloat {
+    0%, 100% { opacity: 0.9; transform: scale(1); }
     50% { opacity: 1; transform: scale(1.02); }
 }
 
