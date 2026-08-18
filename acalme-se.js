@@ -105,19 +105,62 @@ document.addEventListener('DOMContentLoaded', () => {
             <path class="colorable" d="M400 100 L400 50" stroke="#000" stroke-width="2"/>
             <path class="colorable" d="M400 500 L400 550" stroke="#000" stroke-width="2"/>
         `,
-        canudos: `
-            <!-- Céu -->
-            <rect class="colorable" x="0" y="0" width="800" height="400" fill="#ffffff" stroke="#000" stroke-width="2"/>
-            <!-- Pórtico/Entrada -->
-            <path class="colorable" d="M200 400 L200 200 L600 200 L600 400 Z" fill="#ffffff" stroke="#000" stroke-width="3"/>
-            <path class="colorable" d="M200 200 Q400 100 600 200" fill="#ffffff" stroke="#000" stroke-width="3"/>
-            <!-- Chão -->
-            <rect class="colorable" x="0" y="400" width="800" height="200" fill="#ffffff" stroke="#000" stroke-width="2"/>
-            <!-- Montanhas ao Fundo -->
-            <path class="colorable" d="M0 400 L100 300 L250 400 Z" fill="#ffffff" stroke="#000" stroke-width="1"/>
-            <path class="colorable" d="M550 400 L700 280 L800 400 Z" fill="#ffffff" stroke="#000" stroke-width="1"/>
-            <!-- Letreiro (Simulado) -->
-            <rect class="colorable" x="300" y="220" width="200" height="40" fill="#ffffff" stroke="#000" stroke-width="1"/>
+        aves: `
+            <!-- Fundo Céu -->
+            <rect class="colorable" x="0" y="0" width="800" height="600" fill="#ffffff" stroke="#000" stroke-width="2"/>
+            <!-- Sol/Lua ao fundo -->
+            <circle class="colorable" cx="150" cy="150" r="60" fill="#ffffff" stroke="#000" stroke-width="2"/>
+            <!-- Aves em Vôo (Divididas em asas e corpo) -->
+            <!-- Ave 1 -->
+            <path class="colorable" d="M300 200 Q320 180 350 200 L350 210 Q320 190 300 210 Z" fill="#ffffff" stroke="#000" stroke-width="2"/>
+            <path class="colorable" d="M400 200 Q380 180 350 200 L350 210 Q380 190 400 210 Z" fill="#ffffff" stroke="#000" stroke-width="2"/>
+            <!-- Ave 2 -->
+            <path class="colorable" d="M450 300 Q470 280 500 300 L500 310 Q470 290 450 310 Z" fill="#ffffff" stroke="#000" stroke-width="2"/>
+            <path class="colorable" d="M550 300 Q530 280 500 300 L500 310 Q530 290 550 310 Z" fill="#ffffff" stroke="#000" stroke-width="2"/>
+            <!-- Ave 3 -->
+            <path class="colorable" d="M200 350 Q220 330 250 350 L250 360 Q220 340 200 360 Z" fill="#ffffff" stroke="#000" stroke-width="2"/>
+            <path class="colorable" d="M300 350 Q280 330 250 350 L250 360 Q280 340 300 360 Z" fill="#ffffff" stroke="#000" stroke-width="2"/>
+            <!-- Horizonte/Nuvens -->
+            <path class="colorable" d="M0 500 Q400 450 800 500 L800 600 L0 600 Z" fill="#ffffff" stroke="#000" stroke-width="2"/>
+        `,
+        canhao: `
+            <!-- Fundo -->
+            <rect class="colorable" x="0" y="0" width="800" height="600" fill="#ffffff" stroke="#000" stroke-width="2"/>
+            <!-- Roda do Canhão -->
+            <circle class="colorable" cx="300" cy="450" r="80" fill="#ffffff" stroke="#000" stroke-width="3"/>
+            <circle class="colorable" cx="300" cy="450" r="20" fill="#ffffff" stroke="#000" stroke-width="2"/>
+            <!-- Raios da Roda -->
+            <line x1="300" y1="370" x2="300" y2="430" stroke="#000" stroke-width="2"/>
+            <line x1="300" y1="470" x2="300" y2="530" stroke="#000" stroke-width="2"/>
+            <line x1="220" y1="450" x2="280" y2="450" stroke="#000" stroke-width="2"/>
+            <line x1="320" y1="450" x2="380" y2="450" stroke="#000" stroke-width="2"/>
+            <!-- Corpo do Canhão -->
+            <path class="colorable" d="M250 400 L650 300 L670 350 L280 450 Z" fill="#ffffff" stroke="#000" stroke-width="3"/>
+            <!-- Boca do Canhão -->
+            <ellipse class="colorable" cx="660" cy="325" rx="15" ry="30" fill="#ffffff" stroke="#000" stroke-width="2" transform="rotate(-15, 660, 325)"/>
+            <!-- Base/Suporte -->
+            <path class="colorable" d="M200 550 L400 550 L350 450 L250 450 Z" fill="#ffffff" stroke="#000" stroke-width="2"/>
+            <!-- Solo -->
+            <rect class="colorable" x="0" y="550" width="800" height="50" fill="#ffffff" stroke="#000" stroke-width="1"/>
+        `,
+        mandacaru: `
+            <!-- Fundo -->
+            <rect class="colorable" x="0" y="0" width="800" height="600" fill="#ffffff" stroke="#000" stroke-width="2"/>
+            <!-- Tronco Principal -->
+            <path class="colorable" d="M370 600 L370 200 Q400 170 430 200 L430 600 Z" fill="#ffffff" stroke="#000" stroke-width="3"/>
+            <!-- Braço 1 (Esquerda) -->
+            <path class="colorable" d="M370 450 Q300 450 300 350 Q300 300 330 300 Q360 300 360 350 L370 350 Z" fill="#ffffff" stroke="#000" stroke-width="2"/>
+            <!-- Braço 2 (Direita) -->
+            <path class="colorable" d="M430 350 Q500 350 500 250 Q500 200 530 200 Q560 200 560 250 L560 350 Q560 450 430 450 Z" fill="#ffffff" stroke="#000" stroke-width="2"/>
+            <!-- Gomos/Linhas do Cacto -->
+            <line x1="400" y1="200" x2="400" y2="600" stroke="#000" stroke-width="1" stroke-dasharray="5,5"/>
+            <line x1="330" y1="300" x2="330" y2="350" stroke="#000" stroke-width="1" stroke-dasharray="3,3"/>
+            <line x1="530" y1="200" x2="530" y2="350" stroke="#000" stroke-width="1" stroke-dasharray="3,3"/>
+            <!-- Solo Caatinga -->
+            <path class="colorable" d="M0 580 Q400 560 800 580 L800 600 L0 600 Z" fill="#ffffff" stroke="#000" stroke-width="2"/>
+            <!-- Pedras -->
+            <circle class="colorable" cx="200" cy="570" r="15" fill="#ffffff" stroke="#000" stroke-width="1"/>
+            <circle class="colorable" cx="600" cy="575" r="20" fill="#ffffff" stroke="#000" stroke-width="1"/>
         `,
         serra: `
             <!-- Fundo -->
