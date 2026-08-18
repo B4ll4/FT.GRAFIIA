@@ -62,12 +62,13 @@
 .palette {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 8px;
+    max-width: 600px;
 }
 
 .color-swatch {
-    width: 35px;
-    height: 35px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     cursor: pointer;
     border: 2px solid transparent;
@@ -112,7 +113,8 @@
 
 .selector-btns {
     display: flex;
-    gap: 10px;
+    flex-wrap: wrap;
+    gap: 8px;
 }
 
 .select-img {
